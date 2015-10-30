@@ -16,7 +16,7 @@ class TestStepSaveResponseAction extends AbstractSoapUIAction<HttpRequestTestSte
 {
     public TestStepSaveResponseAction()
     {
-        super( "Export Request and Response", "Saves recent response to a file" );
+        super( "Plugin:Export Request and Response", "Saves recent response to a file" );
     }
 
 
@@ -47,7 +47,7 @@ class TestStepSaveResponseAction extends AbstractSoapUIAction<HttpRequestTestSte
             def rawResponse = new String(httpTestRequestStep.httpRequest.response.getRawResponseData(),"UTF-8")
             def today= new Date() //represents the date and time when it is created
             //SoapUI.log today.format("yyyyMMdd-HH:mm:ss")
-            String today1 = today.format("yyyyMMdd-HH:mm:ss")
+            String today1 = today.format("yyyyMMdd-HH:mm:ss.S")
             //SoapUI.log today1
             String result = today1.replaceAll(":", "");
             //SoapUI.log result
@@ -60,12 +60,13 @@ class TestStepSaveResponseAction extends AbstractSoapUIAction<HttpRequestTestSte
             String fileName = tcName+"__" +tstName+ "__" + result1 +".txt"
 //            SoapUI.log.info "File Name is :: " +fileName
 
-            String fileName1 = fileName.replaceAll("/", "-");
-            String fileName2 = fileName1.replaceAll(";","-");
-            String fileName3 = fileName2.replaceAll(":","-");
-            String fileName4 = fileName3.replaceAll(",","-");
-            String fileName5 = fileName4.replaceAll("\\?","-");
-            String fileName6 = fileName5.replaceAll("-","_")
+//            String fileName1 = fileName.replaceAll("/", "-");
+//            String fileName2 = fileName1.replaceAll(";","-");
+//            String fileName3 = fileName2.replaceAll(":","-");
+//            String fileName4 = fileName3.replaceAll(",","-");
+//            String fileName5 = fileName4.replaceAll("\\?","-");
+//            String fileName6 = fileName5.replaceAll("-","_")
+            String fileName6 = fileName.replaceAll("[^a-zA-Z0-9.-]", "_")
 
             def mainDir = System.getProperty('user.home')
 //            SoapUI.log.info "User's current Directory is : " + mainDir

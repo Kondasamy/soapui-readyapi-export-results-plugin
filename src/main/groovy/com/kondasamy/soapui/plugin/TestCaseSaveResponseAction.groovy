@@ -15,7 +15,7 @@ class TestCaseSaveResponseAction extends AbstractSoapUIAction<TestCase>
 {
     public TestCaseSaveResponseAction()
     {
-        super("Export Request and Response", "Saves recent response of underlying TestSteps's to a file")
+        super("Plugin:Export Request and Response", "Saves recent response of underlying TestSteps's to a file")
     }
     @Override
     void perform(TestCase testCase, Object o)
@@ -45,17 +45,18 @@ class TestCaseSaveResponseAction extends AbstractSoapUIAction<TestCase>
                             def projName = tests.testCase.testSuite.project.name
 
                             def today= new Date()
-                            String today1 = today.format("yyyyMMdd-HH:mm:ss")
+                            String today1 = today.format("yyyyMMdd-HH:mm:ss.S")
                             String result = today1.replaceAll(":", "");
                             String result1 = result.replaceAll("-", "");
                             String fileName = tcName+"__" +tstName+ "__" + result1 +".txt"
 
-                            String fileName1 = fileName.replaceAll("/", "-");
-                            String fileName2 = fileName1.replaceAll(";","-");
-                            String fileName3 = fileName2.replaceAll(":","-");
-                            String fileName4 = fileName3.replaceAll(",","-");
-                            String fileName5 = fileName4.replaceAll("\\?","-");
-                            String fileName6 = fileName5.replaceAll("-","_")
+//                            String fileName1 = fileName.replaceAll("/", "-");
+//                            String fileName2 = fileName1.replaceAll(";","-");
+//                            String fileName3 = fileName2.replaceAll(":","-");
+//                            String fileName4 = fileName3.replaceAll(",","-");
+//                            String fileName5 = fileName4.replaceAll("\\?","-");
+//                            String fileName6 = fileName5.replaceAll("-","_")
+                            String fileName6 = fileName.replaceAll("[^a-zA-Z0-9.-]", "_")
 
                             def mainDir = System.getProperty('user.home')
                             def SubDir = "\\SoapUI Data\\"+projName+"\\"+tsName
@@ -105,17 +106,18 @@ class TestCaseSaveResponseAction extends AbstractSoapUIAction<TestCase>
                             def projName = tests.testCase.testSuite.project.name
 
                             def today= new Date()
-                            String today1 = today.format("yyyyMMdd-HH:mm:ss")
+                            String today1 = today.format("yyyyMMdd-HH:mm:ss.S")
                             String result = today1.replaceAll(":", "");
                             String result1 = result.replaceAll("-", "");
                             String fileName = tcName+"__" +tstName+ "__" + result1 +".txt"
 
-                            String fileName1 = fileName.replaceAll("/", "-");
-                            String fileName2 = fileName1.replaceAll(";","-");
-                            String fileName3 = fileName2.replaceAll(":","-");
-                            String fileName4 = fileName3.replaceAll(",","-");
-                            String fileName5 = fileName4.replaceAll("\\?","-");
-                            String fileName6 = fileName5.replaceAll("-","_")
+//                            String fileName1 = fileName.replaceAll("/", "-");
+//                            String fileName2 = fileName1.replaceAll(";","-");
+//                            String fileName3 = fileName2.replaceAll(":","-");
+//                            String fileName4 = fileName3.replaceAll(",","-");
+//                            String fileName5 = fileName4.replaceAll("\\?","-");
+//                            String fileName6 = fileName5.replaceAll("-","_")
+                            String fileName6 = fileName.replaceAll("[^a-zA-Z0-9.-]", "_")
 
                             def mainDir = System.getProperty('user.home')
                             def SubDir = "\\SoapUI Data\\"+projName+"\\"+tsName

@@ -1,0 +1,8 @@
+com\kondasamy\soapui\plugin\ActionGroups.class
+com\kondasamy\soapui\plugin\ProjectSaveResponseAction.class
+com\kondasamy\soapui\plugin\TestStepSaveResponseAction.class
+com\kondasamy\soapui\plugin\TestSuiteSaveResponseAction.class
+com\kondasamy\soapui\plugin\PluginConfig.class
+com\kondasamy\soapui\plugin\TestCaseSaveResponseAction.class
+com\kondasamy\soapui\plugin\SamyPluginSettings.class
+com\kondasamy\soapui\plugin\SamyTestRunListener.class

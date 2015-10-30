@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:soapui-listeners xmlns:tns="http://eviware.com/soapui/config">
+
+    <!-- Created by Kondasamy J
+    Mail To: Kondasamy@outlook.com-->
+
+     <tns:listener id="TestRunListener"
+               listenerClass="com.kondasamy.soapui.plugin.SamyTestRunListener"
+               listenerInterface="com.eviware.soapui.model.testsuite.TestRunListener"/>
+</tns:soapui-listeners>
