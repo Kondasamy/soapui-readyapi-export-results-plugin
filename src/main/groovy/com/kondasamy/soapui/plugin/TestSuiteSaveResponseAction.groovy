@@ -62,7 +62,7 @@ class TestSuiteSaveResponseAction extends AbstractSoapUIAction<TestSuite>
                                             String fileName6 = fileName.replaceAll("[^a-zA-Z0-9.-]", "_")
 
                                             def mainDir = System.getProperty('user.home')
-                                            def SubDir = "\\SoapUI Data\\"+projName+"\\"+tsName
+                                            def SubDir = "\\SoapUI Data\\"+projName
                                             def SubDir1 = new File(mainDir,SubDir)
 //                                            SubDir1.mkdirs()
                                             if(SubDir1.exists())
@@ -123,7 +123,7 @@ class TestSuiteSaveResponseAction extends AbstractSoapUIAction<TestSuite>
                                             String fileName6 = fileName.replaceAll("[^a-zA-Z0-9.-]", "_")
 
                                             def mainDir = System.getProperty('user.home')
-                                            def SubDir = "\\SoapUI Data\\"+projName+"\\"+tsName
+                                            def SubDir = "\\SoapUI Data\\"+projName
                                             def SubDir1 = new File(mainDir,SubDir)
 //                                            SubDir1.mkdirs()
                                             if(SubDir1.exists())

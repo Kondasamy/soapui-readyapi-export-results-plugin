@@ -70,7 +70,7 @@ class TestStepSaveResponseAction extends AbstractSoapUIAction<HttpRequestTestSte
 
             def mainDir = System.getProperty('user.home')
 //            SoapUI.log.info "User's current Directory is : " + mainDir
-            def SubDir = "\\SoapUI Data\\"+projName+"\\"+tsName
+            def SubDir = "\\SoapUI Data\\"+projName
 //            SoapUI.log.info SubDir
             def SubDir1 = new File(mainDir,SubDir)
 //            SubDir1.mkdirs()

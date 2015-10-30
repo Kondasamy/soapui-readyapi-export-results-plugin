@@ -44,7 +44,7 @@ public class SamyTestRunListener extends TestRunListenerAdapter
 
 //        Main Directory -User directory
         def mainDir = System.getProperty('user.home')
-        def SubDir = "\\SoapUI Data\\"+projName+"\\"+tsName
+        def SubDir = "\\SoapUI Data\\"+projName
         def SubDir1 = new File(mainDir,SubDir)
         if(SubDir1.exists())
         {
