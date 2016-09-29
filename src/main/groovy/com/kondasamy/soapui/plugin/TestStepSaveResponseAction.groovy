@@ -51,13 +51,13 @@ class TestStepSaveResponseAction extends AbstractSoapUIAction<HttpRequestTestSte
             //SoapUI.log today1
             String result = today1.replaceAll(":", "");
             //SoapUI.log result
-            String result1 = result.replaceAll("-", "");
-//            SoapUI.log.info "Refined Date is : " + result1
+            String todayTime = result.replaceAll("-", "");
+//            SoapUI.log.info "Refined Date is : " + todayTime
             def tstName = httpTestRequestStep.testStep.getName()
             def tcName = httpTestRequestStep.testCase.getName()
             def tsName = httpTestRequestStep.testCase.testSuite.getName()
             def projName = httpTestRequestStep.testCase.testSuite.project.name
-            String fileName = tcName+"__" +tstName+ "__" + result1 +".txt"
+            String fileName = tcName+"__" +tstName+ "__" + todayTime +".txt"
 //            SoapUI.log.info "File Name is :: " +fileName
 
 //            String fileName1 = fileName.replaceAll("/", "-");
@@ -69,8 +69,9 @@ class TestStepSaveResponseAction extends AbstractSoapUIAction<HttpRequestTestSte
             String fileName6 = fileName.replaceAll("[^a-zA-Z0-9.-]", "_")
 
             def mainDir = System.getProperty('user.home')
+            String date = today.format("yyyyMMdd")
 //            SoapUI.log.info "User's current Directory is : " + mainDir
-            def SubDir = "\\SoapUI Data\\"+projName
+            def SubDir = "\\SoapUI Data\\" + projName + "\\" + date
 //            SoapUI.log.info SubDir
             def SubDir1 = new File(mainDir,SubDir)
 //            SubDir1.mkdirs()

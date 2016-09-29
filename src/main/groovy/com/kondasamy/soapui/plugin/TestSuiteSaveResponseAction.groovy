@@ -50,8 +50,8 @@ class TestSuiteSaveResponseAction extends AbstractSoapUIAction<TestSuite>
                                             def today= new Date()
                                             String today1 = today.format("yyyyMMdd-HH:mm:ss.S")
                                             String result = today1.replaceAll(":", "");
-                                            String result1 = result.replaceAll("-", "");
-                                            String fileName = tcName+"__" +tstName+ "__" + result1 +".txt"
+                                            String todayTime = result.replaceAll("-", "");
+                                            String fileName = tcName+"__" +tstName+ "__" + todayTime +".txt"
 
 //                                            String fileName1 = fileName.replaceAll("/", "-");
 //                                            String fileName2 = fileName1.replaceAll(";","-");
@@ -62,7 +62,9 @@ class TestSuiteSaveResponseAction extends AbstractSoapUIAction<TestSuite>
                                             String fileName6 = fileName.replaceAll("[^a-zA-Z0-9.-]", "_")
 
                                             def mainDir = System.getProperty('user.home')
-                                            def SubDir = "\\SoapUI Data\\"+projName
+                                            String date = today.format("yyyyMMdd")
+//                                          SoapUI.log.info "User's current Directory is : " + mainDir
+                                            def SubDir = "\\SoapUI Data\\" + projName + "\\" + date
                                             def SubDir1 = new File(mainDir,SubDir)
 //                                            SubDir1.mkdirs()
                                             if(SubDir1.exists())
@@ -111,8 +113,8 @@ class TestSuiteSaveResponseAction extends AbstractSoapUIAction<TestSuite>
                                             def today= new Date()
                                             String today1 = today.format("yyyyMMdd-HH:mm:ss.S")
                                             String result = today1.replaceAll(":", "");
-                                            String result1 = result.replaceAll("-", "");
-                                            String fileName = tcName+"__" +tstName+ "__" + result1 +".txt"
+                                            String todayTime = result.replaceAll("-", "");
+                                            String fileName = tcName+"__" +tstName+ "__" + todayTime +".txt"
 
 //                                            String fileName1 = fileName.replaceAll("/", "-");
 //                                            String fileName2 = fileName1.replaceAll(";","-");
@@ -123,7 +125,9 @@ class TestSuiteSaveResponseAction extends AbstractSoapUIAction<TestSuite>
                                             String fileName6 = fileName.replaceAll("[^a-zA-Z0-9.-]", "_")
 
                                             def mainDir = System.getProperty('user.home')
-                                            def SubDir = "\\SoapUI Data\\"+projName
+                                            String date = today.format("yyyyMMdd")
+//                                          SoapUI.log.info "User's current Directory is : " + mainDir
+                                            def SubDir = "\\SoapUI Data\\" + projName + "\\" + date
                                             def SubDir1 = new File(mainDir,SubDir)
 //                                            SubDir1.mkdirs()
                                             if(SubDir1.exists())
