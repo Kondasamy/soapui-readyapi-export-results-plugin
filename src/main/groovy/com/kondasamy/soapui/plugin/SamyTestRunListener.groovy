@@ -34,12 +34,6 @@ public class SamyTestRunListener extends TestRunListenerAdapter
         String fileName = tcName+"__" +tstName+ "__" + today3 +".txt"
 
 //        Replace unsupported characters
-//        String fileName1 = fileName.replaceAll("/", "-");
-//        String fileName2 = fileName1.replaceAll(";","-");
-//        String fileName3 = fileName2.replaceAll(":","-");
-//        String fileName4 = fileName3.replaceAll(",","-");
-//        String fileName5 = fileName4.replaceAll("\\?","-");
-//        String fileName6 = fileName5.replaceAll("-","_")
         String fileName6 = fileName.replaceAll("[^a-zA-Z0-9.-]", "_")
 
 //        Main Directory -User directory
